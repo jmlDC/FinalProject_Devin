@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterScreen">
+
+    <TextView
+        android:id="@+id/confirmPasswordRegisterTextView"
+        android:layout_width="147dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:hint="Password"
+        android:text="Confirm Password:"
+        app:layout_constraintStart_toStartOf="@+id/passwordRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterField" />
+
+    <EditText
+        android:id="@+id/confirmPasswordRegisterField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/confirmPasswordRegisterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegisterTextView" />
+
+    <TextView
+        android:id="@+id/passwordRegisterTextView"
+        android:layout_width="75dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="4dp"
+        android:hint="Password"
+        android:text="Password:"
+        app:layout_constraintStart_toStartOf="@+id/usernameRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/usernameRegisterField" />
+
+    <EditText
+        android:id="@+id/passwordRegisterField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/passwordRegisterTextView"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterTextView" />
+
+    <EditText
+        android:id="@+id/usernameRegisterField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameRegisterTextView" />
+
+    <TextView
+        android:id="@+id/usernameRegisterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:text="User Name:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/usernameRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/registerTextView" />
+
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="269dp"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:text="REGISTER"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <Button
+        android:id="@+id/saveRegisterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegisterField" />
+
+    <Button
+        android:id="@+id/cancelRegisterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="@+id/saveRegisterButton"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/saveRegisterButton"
+        app:layout_constraintTop_toBottomOf="@+id/saveRegisterButton" />
+
+    <ImageView
+        android:id="@+id/imageViewRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/usernameRegisterTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+</androidx.constraintlayout.widget.ConstraintLayout>

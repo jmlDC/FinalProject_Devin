@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserRecyclerViewScreen">
+
+    <TextView
+        android:id="@+id/shelfTextView"
+        android:layout_width="201dp"
+        android:layout_height="88dp"
+        android:gravity="center"
+        android:text="BOOKS IN SHELF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <Button
+        android:id="@+id/clearShelvesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="372dp"
+        android:text="CLEAR BOOKS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelfTextView" />
+
+    <Button
+        android:id="@+id/addShelfButton"
+        android:layout_width="154dp"
+        android:layout_height="47dp"
+        android:text="ADD BOOKS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clearShelvesButton"
+        app:layout_constraintVertical_bias="0.207" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shelfRecyclerView"
+        android:layout_width="331dp"
+        android:layout_height="289dp"
+        app:layout_constraintBottom_toTopOf="@+id/clearShelvesButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shelfTextView"
+        app:layout_constraintVertical_bias="0.337" />
+</androidx.constraintlayout.widget.ConstraintLayout>

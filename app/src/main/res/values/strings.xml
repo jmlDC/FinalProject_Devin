@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Devin</string>
+
+    <!-- THIS MUST MATCH YOUR PACKAGE NAME OR ELSE CAMERA WILL NOT SAVE IMAGE-->
+    <string name="fileAuthority">cenizadelacruzenriquez.project.finalproject</string>
+</resources>

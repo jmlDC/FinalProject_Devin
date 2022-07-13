@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cenizadelacruzenriquez.project.finalproject">
+
+    <!-- NEW: application permissions -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FinalProject_Devin"
+        tools:targetApi="31">
+        <activity
+            android:name=".EditShelfScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ViewBookScreen"
+            android:exported="false" />
+        <activity
+            android:name=".EditBookScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AddBookScreen"
+            android:exported="false" />
+        <activity
+            android:name=".BookRecyclerViewScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AddShelfScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ShelfRecyclerViewScreen_"
+            android:exported="false" />
+        <activity
+            android:name=".ImageActivity_"
+            android:exported="false" />
+        <activity
+            android:name=".EditUserScreen_"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterScreen_"
+            android:exported="false" />
+        <activity
+            android:name=".UserRecyclerViewScreen_"
+            android:exported="false" />
+
+        <!--
+     NEW: the file authority is found in the res/values/strings.xml
+     this MUST match your package name in the <manifest> tag
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/fileAuthority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- there must be a res/xml/file_provider_path.xml or this will fail -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_path" />
+        </provider>
+
+
+        <activity
+            android:name=".LoginScreen_"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
