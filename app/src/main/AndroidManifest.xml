@@ -21,7 +21,7 @@
         android:theme="@style/Theme.FinalProject_Devin"
         tools:targetApi="31">
         <activity
-            android:name=".EditShelfScreen"
+            android:name=".EditShelfScreen_"
             android:exported="false" />
         <activity
             android:name=".ViewBookScreen"
@@ -33,10 +33,10 @@
             android:name=".AddBookScreen"
             android:exported="false" />
         <activity
-            android:name=".BookRecyclerViewScreen"
+            android:name=".BookRecyclerViewScreen_"
             android:exported="false" />
         <activity
-            android:name=".AddShelfScreen"
+            android:name=".AddShelfScreen_"
             android:exported="false" />
         <activity
             android:name=".ShelfRecyclerViewScreen_"
