@@ -8,14 +8,16 @@
 
     <TextView
         android:id="@+id/shelfTextView"
-        android:layout_width="117dp"
-        android:layout_height="77dp"
+        android:layout_width="259dp"
+        android:layout_height="91dp"
         android:gravity="center"
         android:text="SHELVES"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#9537FF"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
@@ -24,32 +26,30 @@
         android:id="@+id/clearShelvesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="372dp"
+        android:layout_marginTop="8dp"
         android:text="CLEAR SHELVES"
+        app:backgroundTint="#FC0035"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelfTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/addShelfButton" />
 
     <Button
         android:id="@+id/addShelfButton"
         android:layout_width="154dp"
         android:layout_height="47dp"
+        android:layout_marginTop="19dp"
         android:text="ADD SHELF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearShelvesButton"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintTop_toBottomOf="@+id/shelfRecyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/shelfRecyclerView"
-        android:layout_width="331dp"
-        android:layout_height="289dp"
-        app:layout_constraintBottom_toTopOf="@+id/clearShelvesButton"
+        android:layout_width="381dp"
+        android:layout_height="351dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shelfTextView"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintTop_toBottomOf="@+id/shelfTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

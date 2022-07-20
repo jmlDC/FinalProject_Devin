@@ -13,7 +13,6 @@ public class User extends RealmObject {
 
     private String path;
 
-
     public String getUuid() {
         return uuid;
     }

@@ -70,10 +70,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/usernameRegisterField"
-        app:layout_constraintTop_toBottomOf="@+id/registerTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/editShelfTextView" />
 
     <TextView
-        android:id="@+id/registerTextView"
+        android:id="@+id/editShelfTextView"
         android:layout_width="269dp"
         android:layout_height="58dp"
         android:gravity="center"
@@ -107,11 +107,11 @@
 
     <ImageView
         android:id="@+id/imageViewRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="103dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/usernameRegisterTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@mipmap/ic_launcher" />
 </androidx.constraintlayout.widget.ConstraintLayout>

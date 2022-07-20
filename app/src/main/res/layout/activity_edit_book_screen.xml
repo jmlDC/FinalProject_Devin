@@ -7,129 +7,129 @@
     tools:context=".RegisterScreen">
 
     <TextView
-        android:id="@+id/confirmPasswordRegisterTextView2"
-        android:layout_width="147dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="84dp"
-        android:hint="Password"
-        android:text="Rating:"
-        app:layout_constraintStart_toStartOf="@+id/bookAuthorAddField"
-        app:layout_constraintTop_toBottomOf="@+id/bookAuthorAddField" />
-
-    <TextView
-        android:id="@+id/bookNotesAddField"
-        android:layout_width="147dp"
-        android:layout_height="17dp"
+        android:id="@+id/notesEditBookTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
         android:layout_marginTop="8dp"
-        android:hint="Password"
         android:text="Notes:"
-        app:layout_constraintStart_toStartOf="@+id/bookAuthorAddField"
-        app:layout_constraintTop_toBottomOf="@+id/bookAuthorAddField" />
+        app:layout_constraintStart_toStartOf="@+id/bookAuthorEditField"
+        app:layout_constraintTop_toBottomOf="@+id/bookAuthorEditField" />
 
     <EditText
-        android:id="@+id/confirmPasswordRegisterField"
+        android:id="@+id/bookAuthorEditField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Notes"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/bookNotesAddField"
-        app:layout_constraintTop_toBottomOf="@+id/bookNotesAddField" />
-
-    <TextView
-        android:id="@+id/passwordRegisterTextView"
-        android:layout_width="75dp"
-        android:layout_height="18dp"
         android:layout_marginTop="4dp"
-        android:hint="Password"
-        android:text="Author:"
-        app:layout_constraintStart_toStartOf="@+id/bookTitleAddField"
-        app:layout_constraintTop_toBottomOf="@+id/bookTitleAddField" />
-
-    <EditText
-        android:id="@+id/bookAuthorAddField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Author"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/passwordRegisterTextView"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterTextView" />
+        app:layout_constraintStart_toStartOf="@+id/authorEditBookTextView"
+        app:layout_constraintTop_toBottomOf="@+id/authorEditBookTextView" />
 
     <EditText
-        android:id="@+id/bookTitleAddField"
+        android:id="@+id/bookTitleEditField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Book Title"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameRegisterTextView" />
+        app:layout_constraintStart_toStartOf="@+id/bookTitleEditBookTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitleEditBookTextView" />
 
-    <TextView
-        android:id="@+id/usernameRegisterTextView"
+    <ImageView
+        android:id="@+id/imageViewEditBook"
+        android:layout_width="110dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBookTextView"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <RatingBar
+        android:id="@+id/addBookRatingEditBook"
+        style="@android:style/Widget.Material.Light.RatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="Book Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/bookTitleAddField"
-        app:layout_constraintTop_toBottomOf="@+id/registerTextView" />
+        android:layout_marginTop="4dp"
+        android:numStars="5"
+        android:stepSize=".5"
+        app:layout_constraintStart_toStartOf="@+id/ratingEditBookTextView"
+        app:layout_constraintTop_toBottomOf="@+id/ratingEditBookTextView" />
 
     <TextView
-        android:id="@+id/registerTextView"
-        android:layout_width="269dp"
-        android:layout_height="58dp"
-        android:gravity="center"
+        android:id="@+id/bookTitleEditBookTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:text="Book Title:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewEditBook" />
+
+    <TextView
+        android:id="@+id/editBookTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="EDIT BOOK"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
-
-    <Button
-        android:id="@+id/saveRegisterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegisterField" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/authorEditBookTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Author:"
+        app:layout_constraintStart_toStartOf="@+id/bookTitleEditBookTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitleEditField" />
+
+    <EditText
+        android:id="@+id/notesEditBookMultiLine"
+        android:layout_width="215dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Insert Comment"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/notesEditBookTextView"
+        app:layout_constraintTop_toBottomOf="@+id/notesEditBookTextView" />
+
+    <TextView
+        android:id="@+id/ratingEditBookTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Rating:"
+        app:layout_constraintStart_toStartOf="@+id/notesEditBookTextView"
+        app:layout_constraintTop_toBottomOf="@+id/notesEditBookMultiLine" />
 
     <Button
-        android:id="@+id/cancelRegisterButton"
+        android:id="@+id/saveEditBookButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@+id/addBookRatingEditBook"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/addBookRatingEditBook"
+        app:layout_constraintTop_toBottomOf="@+id/addBookRatingEditBook" />
+
+    <Button
+        android:id="@+id/cancelEditBookButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:text="Cancel"
-        app:layout_constraintEnd_toEndOf="@+id/saveRegisterButton"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="@+id/saveRegisterButton"
-        app:layout_constraintTop_toBottomOf="@+id/saveRegisterButton" />
+        app:layout_constraintEnd_toEndOf="@+id/notesEditBookMultiLine"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toEndOf="@+id/saveEditBookButton"
+        app:layout_constraintTop_toTopOf="@+id/saveEditBookButton" />
 
-    <ImageView
-        android:id="@+id/imageViewAddBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/usernameRegisterTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
-    <RatingBar
-        android:id="@+id/addBookRating"
-        android:layout_width="240dp"
-        android:layout_height="55dp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="438dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

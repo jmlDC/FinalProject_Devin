@@ -2,62 +2,67 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="100dp"
+        android:id="@+id/bookTitleBookLayoutTextView"
+        android:layout_width="160dp"
         android:layout_height="20dp"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="16dp"
         android:text="Book Name"
+        app:autoSizeMaxTextSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/passwordTextView"
-        android:layout_width="100dp"
+        android:id="@+id/bookAuthorBookLayoutTextView"
+        android:layout_width="160dp"
         android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:text="Book Notes"
-        app:layout_constraintEnd_toEndOf="@+id/nameTextView"
+        android:text="Book Author"
+        app:layout_constraintEnd_toEndOf="@+id/bookTitleBookLayoutTextView"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
-
-    <ImageButton
-        android:id="@+id/deleteImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_delete"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/editImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/bookTitleBookLayoutTextView" />
 
     <ImageView
-        android:id="@+id/bookCoverRowImageView"
+        android:id="@+id/bookImageViewBookLayout"
         android:layout_width="64dp"
         android:layout_height="62dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/nameTextView"
-        app:layout_constraintHorizontal_bias="0.75"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/bookTitleBookLayoutTextView"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/editBookLayoutImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        app:layout_constraintStart_toEndOf="@+id/bookImageViewBookLayout"
+        app:layout_constraintTop_toTopOf="@+id/bookImageViewBookLayout"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <RatingBar
+        android:id="@+id/bookLayoutRatingBar"
+        style="@android:style/Widget.Material.Light.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/bookAuthorBookLayoutTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bookAuthorBookLayoutTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bookAuthorBookLayoutTextView" />
+
+    <ImageButton
+        android:id="@+id/deleteBookLayoutImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/editBookLayoutImageButton"
+        app:layout_constraintTop_toTopOf="@+id/editBookLayoutImageButton"
+        app:srcCompat="@android:drawable/ic_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

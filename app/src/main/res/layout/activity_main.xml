@@ -23,68 +23,72 @@
         android:id="@+id/usernameLoginTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
         android:text="User Name:"
-        app:layout_constraintStart_toStartOf="@+id/usernameLoginField"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317" />
 
     <EditText
         android:id="@+id/usernameLoginField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="User Name"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/usernameLoginTextView"
+        app:layout_constraintTop_toBottomOf="@+id/usernameLoginTextView" />
 
     <TextView
         android:id="@+id/passwordLoginTextView"
-        android:layout_width="75dp"
-        android:layout_height="18dp"
-        android:hint="Password"
-        android:text="Password:"
-        app:layout_constraintStart_toStartOf="@+id/usernameLoginField"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLoginField" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameLoginTextView"/>
 
     <CheckBox
         android:id="@+id/rememberMeCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginTop="44dp"
         android:text="Remember me"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLoginField" />
+        app:layout_constraintStart_toStartOf="@+id/passwordLoginTextView"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginTextView" />
 
     <Button
         android:id="@+id/signinLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="SIGN IN"
+        android:textColor="#000000"
+        app:backgroundTint="#03FC52"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rememberMeCheckBox" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701" />
 
     <Button
         android:id="@+id/userManagementLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADMIN"
+        android:textColor="#000000"
+        app:backgroundTint="#A5A5A5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signinLoginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/signinLoginButton"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="390dp"/>
 
     <EditText
         android:id="@+id/passwordLoginField"

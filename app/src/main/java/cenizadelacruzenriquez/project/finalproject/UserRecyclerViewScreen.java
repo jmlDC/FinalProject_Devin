@@ -1,13 +1,17 @@
 package cenizadelacruzenriquez.project.finalproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -60,13 +64,44 @@ public class UserRecyclerViewScreen extends AppCompatActivity {
         // need to check if previously deleted
         if (c.isValid())
         {
-            // Clears remember me stuff
-            prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-            prefs.edit().clear().commit();
+            // get prompts.xml view
+            LayoutInflater li = LayoutInflater.from(this);
+            View promptsView = li.inflate(R.layout.deleteprompt, null);
 
-            realm.beginTransaction();
-            c.deleteFromRealm();
-            realm.commitTransaction();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    this);
+
+            // set prompts.xml to alertdialog builder
+            alertDialogBuilder.setView(promptsView);
+
+            // set dialog message
+            alertDialogBuilder
+                    .setCancelable(false)
+                    .setPositiveButton("YES",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // Clears remember me stuff
+                                    prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                                    prefs.edit().clear().commit();
+
+                                    realm.beginTransaction();
+                                    c.deleteFromRealm();
+                                    realm.commitTransaction();
+                                }
+                            })
+                    .setNegativeButton("NO",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            // show it
+            alertDialog.show();
+
         }
     }
 
@@ -97,19 +132,52 @@ public class UserRecyclerViewScreen extends AppCompatActivity {
     }
 
     public void clearAllAccounts(){
-        // Clears remember me stuff
-        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        prefs.edit().clear().commit();
 
-        // initialize Realm
-        realm = Realm.getDefaultInstance();
+        // get prompts.xml view
+        LayoutInflater li = LayoutInflater.from(this);
+        View promptsView = li.inflate(R.layout.deleteprompt, null);
 
-        // From https://stackoverflow.com/questions/35040599/how-can-i-delete-all-items-in-a-realmresults-list-fastest-and-easiest
-        RealmResults<User> list = realm.where(User.class).findAll();
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
 
-        realm.beginTransaction();
-        list.deleteAllFromRealm();
-        realm.commitTransaction();
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView);
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("YES",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // Clears remember me stuff
+                                prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                                prefs.edit().clear().commit();
+
+                                // initialize Realm
+                                realm = Realm.getDefaultInstance();
+
+                                // From https://stackoverflow.com/questions/35040599/how-can-i-delete-all-items-in-a-realmresults-list-fastest-and-easiest
+                                RealmResults<User> list = realm.where(User.class).findAll();
+
+                                realm.beginTransaction();
+                                list.deleteAllFromRealm();
+                                realm.commitTransaction();
+                            }
+                        })
+                .setNegativeButton("NO",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
+
     }
 
     @ViewById

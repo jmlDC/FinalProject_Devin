@@ -3,7 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_edit_shelf_screen.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/layout/activity_add_book_screen.xml" value="0.3191574096679688" />
+        <entry key="app/src/main/res/layout/activity_add_shelf_screen.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_book_recycler_view_screen.xml" value="0.16050744177481083" />
+        <entry key="app/src/main/res/layout/activity_edit_book_screen.xml" value="0.23831296581432132" />
+        <entry key="app/src/main/res/layout/activity_edit_shelf_screen.xml" value="0.748187233745188" />
+        <entry key="app/src/main/res/layout/activity_edit_user_screen.xml" value="0.10536980749746708" />
+        <entry key="app/src/main/res/layout/activity_image.xml" value="0.10536980749746708" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.10536980749746708" />
+        <entry key="app/src/main/res/layout/activity_register_screen.xml" value="0.1624712479271546" />
+        <entry key="app/src/main/res/layout/activity_shelf_recycler_view_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_user_recycler_view_screen.xml" value="0.10536980749746708" />
+        <entry key="app/src/main/res/layout/activity_view_book_screen.xml" value="0.5930160522460939" />
+        <entry key="app/src/main/res/layout/book_row_layout.xml" value="0.3936477661132813" />
+        <entry key="app/src/main/res/layout/deleteprompt.xml" value="0.10536980749746708" />
+        <entry key="app/src/main/res/layout/shelf_row_layout.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/user_row_layout.xml" value="0.5997454178490296" />
       </map>
     </option>
   </component>

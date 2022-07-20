@@ -88,14 +88,14 @@ public class LoginScreen extends AppCompatActivity {
                 }
 
                 edit.apply();
-                openWelcomeScreen();
+                openWelcomeScreen(matchAccount.first().getUuid());
             }
         }
 
     }
 
-    public void openWelcomeScreen(){
-        ShelfRecyclerViewScreen_.intent(this).start();
+    public void openWelcomeScreen(String uuid){
+        ShelfRecyclerViewScreen_.intent(this).extra("uuid", uuid).start();
     }
 
     /* Remember Me Function in Login */
@@ -112,7 +112,7 @@ public class LoginScreen extends AppCompatActivity {
             // Do nothing
         }
         else{
-            if (rememberedValue.equals("yes") && !uuidRememberedValue.equals(null)){
+            if (rememberedValue.equals("yes") && !uuidRememberedValue.equals(null) && !realm.isEmpty()){
                 RealmResults<User> matchAccount = realm.where(User.class)
                         .equalTo("uuid", uuidRememberedValue, Case.INSENSITIVE)
                         .findAll();
@@ -149,20 +149,4 @@ public class LoginScreen extends AppCompatActivity {
         UserRecyclerViewScreen_.intent(this).start();
     }
 
-//    /* Clear Function from Login */
-//    @ViewById
-//    Button clearLoginButton;
-//
-//    @Click(R.id.clearLoginButton)
-//    public void clear(){
-//        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-//        SharedPreferences.Editor edit = prefs.edit();
-//        edit.clear();
-//        edit.apply();
-//
-//        rememberMeCheckBox.setChecked(false);
-//
-//        Toast toast = Toast.makeText(this, "Preferences Cleared", Toast.LENGTH_SHORT);
-//        toast.show();
-//    }
 }

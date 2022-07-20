@@ -42,11 +42,11 @@ public class UserAdapter extends RealmRecyclerViewAdapter<User, UserAdapter.View
             super(itemView);
 
             // initialize them from the itemView using standard style
-            nameTextView = itemView.findViewById(R.id.nameTextView);
-            passwordTextView = itemView.findViewById(R.id.passwordTextView);
+            nameTextView = itemView.findViewById(R.id.bookTitleBookLayoutTextView);
+            passwordTextView = itemView.findViewById(R.id.bookAuthorBookLayoutTextView);
 
             // initialize the buttons in the layout
-            deleteImageButton = itemView.findViewById(R.id.deleteImageButton);
+            deleteImageButton = itemView.findViewById(R.id.deleteShelfLayoutImageButton);
             editImageButton = itemView.findViewById(R.id.editImageButton);
 
             // initialize the pic in the layout
@@ -91,28 +91,6 @@ public class UserAdapter extends RealmRecyclerViewAdapter<User, UserAdapter.View
         holder.nameTextView.setText(u.getName());
         holder.passwordTextView.setText(u.getPassword());
 
-//        if (u.isDeceased())
-//        {
-//            holder.deceased.setText("Deceased");
-//        }
-//        else
-//        {
-//            holder.deceased.setText("Alive");
-//        }
-
-
-        // NOTE: MUST BE A STRING NOT INTs, etc.
-        // String.valueOf() converts most types to a string
-        // holder.age.setText(String.valueOf(u.getAge()));
-
-        // do any other initializations here as well,  e.g. Button listeners
-//        holder.delete.setTag(u);
-//        holder.delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                activity.delete((Cat) view.getTag());
-//            }
-//        });
 
         // From https://stackoverflow.com/questions/2478517/how-to-display-a-yes-no-dialog-box-on-android
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {

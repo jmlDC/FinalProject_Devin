@@ -3,18 +3,11 @@ package cenizadelacruzenriquez.project.finalproject;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.NetworkPolicy;
-import com.squareup.picasso.Picasso;
-
-import java.io.File;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
@@ -41,7 +34,7 @@ public class ShelfAdapter extends RealmRecyclerViewAdapter<Shelf, ShelfAdapter.V
             shelfDescription = itemView.findViewById(R.id.shelfDescriptionInRowTextView);
 
             edit = itemView.findViewById(R.id.editImageButton);
-            delete = itemView.findViewById(R.id.deleteImageButton);
+            delete = itemView.findViewById(R.id.deleteShelfLayoutImageButton);
 
         }
     }

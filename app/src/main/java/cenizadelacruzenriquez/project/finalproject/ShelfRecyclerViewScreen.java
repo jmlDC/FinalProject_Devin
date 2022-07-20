@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -22,7 +24,6 @@ import io.realm.RealmResults;
 public class ShelfRecyclerViewScreen extends AppCompatActivity {
 
     Realm realm;
-
     String ownerUUID;
 
     @ViewById
@@ -60,7 +61,10 @@ public class ShelfRecyclerViewScreen extends AppCompatActivity {
                 // testing = "hello world";
                 try {
                     realm.beginTransaction();
-                    realm.deleteAll();  // save
+                    RealmResults<Shelf> results = realm.where(Shelf.class).equalTo("ownerUUID", ownerUUID ).findAll();
+                    for ( Shelf b: results) {
+                        b.deleteFromRealm();
+                    }
                     realm.commitTransaction();
 
                     Toast toast = Toast.makeText(ShelfRecyclerViewScreen.this, "Deleted", Toast.LENGTH_SHORT);
@@ -119,10 +123,42 @@ public class ShelfRecyclerViewScreen extends AppCompatActivity {
     }
 
     public void deleteRow(Shelf u){
+
+
         if(u.isValid()){
-            realm.beginTransaction();
-            u.deleteFromRealm();
-            realm.commitTransaction();
+            // get prompts.xml view
+            LayoutInflater li = LayoutInflater.from(this);
+            View promptsView = li.inflate(R.layout.deleteprompt, null);
+
+            androidx.appcompat.app.AlertDialog.Builder alertDialogBuilder = new androidx.appcompat.app.AlertDialog.Builder(
+                    this);
+
+            // set prompts.xml to alertdialog builder
+            alertDialogBuilder.setView(promptsView);
+
+            // set dialog message
+            alertDialogBuilder
+                    .setCancelable(false)
+                    .setPositiveButton("YES",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    realm.beginTransaction();
+                                    u.deleteFromRealm();
+                                    realm.commitTransaction();
+                                }
+                            })
+                    .setNegativeButton("NO",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+            // create alert dialog
+            androidx.appcompat.app.AlertDialog alertDialog = alertDialogBuilder.create();
+
+            // show it
+            alertDialog.show();
         }
     }
 
